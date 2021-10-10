@@ -95,7 +95,7 @@ const makeurl = () => {
     location.href.split('?')[0]
   + '?b=' + document.querySelector('#before').value
   + '&a=' + document.querySelector('#after' ).value
-  + '&i=' + encodeURI(document.querySelector('#input' ).value)
+  + '&i=' + encodeURIComponent(document.querySelector('#input' ).value)
   );
   document.querySelector('#showurl').value = url;
 };
@@ -120,7 +120,7 @@ window.onload = () => {
 
   if (paramArray.b !== undefined) document.querySelector('#before').value = paramArray.b;
   if (paramArray.a !== undefined) document.querySelector('#after' ).value = paramArray.a;
-  if (paramArray.i !== undefined) document.querySelector('#input' ).value = decodeURI(paramArray.i);
+  if (paramArray.i !== undefined) document.querySelector('#input' ).value = decodeURIComponent(paramArray.i);
 
   if (paramArray.b !== undefined && paramArray.a !== undefined && paramArray.i !== undefined) submit();
 
